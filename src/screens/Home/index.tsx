@@ -42,6 +42,8 @@ export function Home() {
 
   function handleFilterLoginData() {
     // Filter results inside data, save with setSearchListData
+    console.log('searchText');
+    console.log(searchText);
     if (searchText && searchText.trim()) {
       const dataFiltered = data.filter((d) =>
         d.service_name.startsWith(searchText)
@@ -49,7 +51,7 @@ export function Home() {
 
       setSearchListData(dataFiltered);
     } else {
-      setSearchListData([]);
+      setSearchListData(data);
     }
   }
 
